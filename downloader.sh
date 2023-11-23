@@ -14,16 +14,20 @@ download_file() {
 
 # List of download links, change here whenever you want new links
 
-download_links=(
-	"https://dl3.downloadly.ir/Files/Elearning/Udemy_NEW_Master_Spring_Boot_3_Spring_Framework_6_with_Java_2023_8.part3_Downloadly.ir.rar"
-	"https://dl3.downloadly.ir/Files/Elearning/Udemy_NEW_Master_Spring_Boot_3_Spring_Framework_6_with_Java_2023_8.part4_Downloadly.ir.rar"
-	"https://dl3.downloadly.ir/Files/Elearning/Udemy_NEW_Master_Spring_Boot_3_Spring_Framework_6_with_Java_2023_8.part5_Downloadly.ir.rar"
-	)
+download_links=()
+read -p "How many links are you downloading? " number
 
-for link in "${download_links[0]}"; do
+for ((i=1; i<number; i++))
+do
+	read -p "Link number $i: " link
+	download_links+=("$link")
+done
+
+for link in "${download_links[@]}"; do
 	echo "Baixando agora: $link"
 	download_file "$link"
 	echo "Download concluído: $link"
 done
 
 echo "Todos os downloads foram concluídos. As threads do terminal estão livres, Lucas!"
+
