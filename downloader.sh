@@ -31,3 +31,7 @@ done
 
 echo "Todos os downloads foram concluídos. As threads do terminal estão livres, Lucas!"
 
+# * ROADMAP * #
+
+# TODO: Add option for automatically extracting multiple-part compacted files. #
+# TODO: Create a simple GUI. #
